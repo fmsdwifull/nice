@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="liu.nice.dao.OrderDao">
+  	<select id="getAllOrders"  resultType="liu.nice.pojo.Order">
+  		 SELECT * FROM orders
+  	</select>
+	<insert id="addOrder" keyProperty="order.id"  useGeneratedKeys="true">
+		insert
+		into orders(user_id,createtime,note)
+		values(#{order.user_id},#{order.createtime},#{order.note})
+	</insert>  	
+  </mapper>
